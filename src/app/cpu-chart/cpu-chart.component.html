@@ -1,2 +1,11 @@
 <h2>CPU</h2>
-<figure id="cpu"></figure>
+<ngx-charts-gauge
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="formattedData"
+  [legend]="legend"
+  [legendPosition]="legendPosition"
+  [smallSegments]="0"
+  [valueFormatting]="formatMiddleValue"
+  >
+</ngx-charts-gauge>
