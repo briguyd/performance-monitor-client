@@ -7,19 +7,19 @@ ngx-charts-gauge {
 }
 
 ::ng-deep ngx-charts-gauge .gauge .gauge-tick path {
+ 
     stroke: rgba(0, 0, 0, .5);
 }
-
-ngx-charts-gauge {
-    display: inline-block;
-}
-
 .chart-container {
     background-color: rgba(0, 0, 0, 0.2);
     margin: 16px;
-    border-radius: 8px;
+    border-radius: 8px;    
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+ngx-charts-gauge {
+    display: inline-block;
 }

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-cpu-chart',
-  templateUrl: './cpu-chart.component.html',
-  styleUrls: ['./cpu-chart.component.scss']
+  selector: 'app-memory-chart',
+  templateUrl: './memory-chart.component.html',
+  styleUrls: ['./memory-chart.component.scss']
 })
-export class CpuChartComponent implements OnInit {
+export class MemoryChartComponent implements OnInit {
 
   @Input() hwData: any;
 
@@ -48,7 +48,7 @@ export class CpuChartComponent implements OnInit {
         if (child.Text === 'Load') {
           this.formattedData = [];
           for (const loadChild of child.Children) {
-            if (loadChild.Text != 'CPU Total') {
+            if (loadChild.Text != 'Virtual Memory') {
               this.formattedData.push({ name: loadChild.Text, value: parseFloat(loadChild.Value) });
             }
           }

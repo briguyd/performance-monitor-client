@@ -1,0 +1,6 @@
+<div id="background-container" #backgroundHost>
+    <div class="villager-row" *ngFor="let row of displayedVillagers">
+        
+        <img class="villager-image" *ngFor="let villager of row" [src]="'assets/villagers/' + villager" />
+    </div>
+</div>

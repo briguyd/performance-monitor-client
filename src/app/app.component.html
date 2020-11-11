@@ -1,6 +1,11 @@
 <!-- {{ result | json }} -->
-<div>
-
-  <img *ngIf="villagers?.images" [src]="'assets/villagers/' + villagers.images[0]" />
-  <app-cpu-chart [hwData]="getComponentByIcon('images_icon/cpu.png')"></app-cpu-chart>
+<div id="wrapper">
+  <div id="content">
+    <app-cpu-chart [hwData]="getComponentByIcon('images_icon/cpu.png')"></app-cpu-chart>
+    
+    <app-memory-chart [hwData]="getComponentByIcon('images_icon/ram.png')"></app-memory-chart>
+  </div>
+  <div id="background">
+    <app-background-pictures></app-background-pictures>
+  </div>
 </div>
