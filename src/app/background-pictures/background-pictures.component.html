@@ -1,6 +1,10 @@
 <div id="background-container" #backgroundHost>
     <div class="villager-row" *ngFor="let row of displayedVillagers">
-        
-        <img class="villager-image" *ngFor="let villager of row" [src]="'assets/villagers/' + villager" />
+
+        <span *ngFor="let villager of row">
+            <div class="villager-container" [@dancingVillager]="villager.state" (@dancingVillager.done)="onAnimationEvent($event, villager)">
+                <img class="villager-image" [src]="'assets/villagers/' + villager.image" />
+            </div>            
+        </span>
     </div>
 </div>

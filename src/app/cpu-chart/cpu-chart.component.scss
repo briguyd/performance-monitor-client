@@ -12,12 +12,20 @@ ngx-charts-gauge {
 
 ngx-charts-gauge {
     display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 0px;
+    border-radius: 8px 8px 0 0;
+    padding: 8px;
 }
 
 .chart-container {
-    background-color: rgba(0, 0, 0, 0.2);
+    
     margin: 16px;
-    border-radius: 8px;
     display: flex;
     justify-content: center;
     flex-direction: column;
