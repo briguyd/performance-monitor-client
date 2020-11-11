@@ -10,7 +10,7 @@ export class CpuChartComponent implements OnInit {
   @Input() hwData: any;
 
   formattedData: any[];
-  view: any[] = [300, 200];
+  view: any[] = [230, 200];
   legend: boolean = false;
   legendPosition: string = 'below';
 

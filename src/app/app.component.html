@@ -1,9 +1,36 @@
 <!-- {{ result | json }} -->
 <div id="wrapper">
-  <div id="content">
-    <app-cpu-chart [hwData]="getComponentByIcon('images_icon/cpu.png')"></app-cpu-chart>
-    
-    <app-memory-chart [hwData]="getComponentByIcon('images_icon/ram.png')"></app-memory-chart>
+  <div id="login" *ngIf="!connected">
+    <form (ngSubmit)="connectToStatus()">
+      <input type="text" class="form-control" id="host" required [(ngModel)]="host" name="host">
+      <input type="number" class="form-control" id="port" required [(ngModel)]="port" name="port">
+      <button type="submit" class="btn btn-success">Connect</button>
+    </form>
+
+  </div>
+  <div id="content" *ngIf="connected">
+    <div>
+      <app-cpu-chart [hwData]="getComponentByIcon('images_icon/cpu.png')"></app-cpu-chart>
+    </div>
+    <div>
+      <app-memory-chart [hwData]="getComponentByIcon('images_icon/ram.png')"></app-memory-chart>
+    </div>
+    <div>
+      <app-gpu-chart [hwData]="getComponentByIcon('images_icon/nvidia.png')"></app-gpu-chart>
+    </div>
+    <div class="bottom-row">
+      <div>
+        <app-cpu-timeline [hwData]="getComponentByIcon('images_icon/cpu.png')"></app-cpu-timeline>
+      </div>
+      <div>
+        <app-temperature-monitor [cpuData]="getComponentByIcon('images_icon/cpu.png')"
+          [gpuData]="getComponentByIcon('images_icon/nvidia.png')"></app-temperature-monitor>
+      </div>
+      <div>
+        <app-network-monitor [hwData]="getComponentByName('Ethernet')"></app-network-monitor>
+      </div>
+    </div>
+
   </div>
   <div id="background">
     <app-background-pictures></app-background-pictures>

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-memory-chart',
-  templateUrl: './memory-chart.component.html',
-  styleUrls: ['./memory-chart.component.scss']
+  selector: 'app-gpu-chart',
+  templateUrl: './gpu-chart.component.html',
+  styleUrls: ['./gpu-chart.component.scss']
 })
-export class MemoryChartComponent implements OnInit {
+export class GpuChartComponent implements OnInit {
 
   @Input() hwData: any;
 
@@ -48,7 +48,7 @@ export class MemoryChartComponent implements OnInit {
         if (child.Text === 'Load') {
           this.formattedData = [];
           for (const loadChild of child.Children) {
-            if (loadChild.Text != 'Virtual Memory') {
+            if (loadChild.Text === 'GPU Core') {
               this.formattedData.push({ name: loadChild.Text, value: parseFloat(loadChild.Value) });
             }
           }

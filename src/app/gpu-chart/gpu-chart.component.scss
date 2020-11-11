@@ -1,0 +1,33 @@
+ngx-charts-gauge {
+    color: #ffffff;
+}
+
+::ng-deep ngx-charts-gauge .gauge .gauge-tick text {
+    fill: rgba(0, 0, 0, .5);
+}
+
+::ng-deep ngx-charts-gauge .gauge .gauge-tick path {
+    stroke: rgba(0, 0, 0, .5);
+}
+
+ngx-charts-gauge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 0px;
+    border-radius: 8px 8px 0 0;
+    padding: 8px;
+}
+
+.chart-container {
+    
+    margin: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
