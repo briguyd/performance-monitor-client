@@ -79,15 +79,14 @@ export class BackgroundPicturesComponent implements OnInit {
     for (const row of this.displayedVillagers) {
       for (const villager of row) {
         const rand = Math.random();
-        if (rand > 0.80) {
+        if (rand > 0.98) {
           villager.state = 'tiltLeft'
-        } else if (rand > .6) {
+        } else if (rand > .96) {
           villager.state = 'tiltRight';
         } else 
-        if (rand > 0.5) {
+        if (rand > 0.92) {
           villager.state = 'normal';
-        } 
-        else if (rand > .3) {
+        } else {
           villager.state = 'disappear';
         }
       }
