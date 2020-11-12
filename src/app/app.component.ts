@@ -25,7 +25,7 @@ export class AppComponent {
     this.hwMon.getHWStatus(this.host, this.port).subscribe((result) => this.result = result);
 
     const source = interval(10000);
-    this.subscription = source.subscribe(() => this.hwMon.getHWStatus('localhost', 8086).subscribe((result) => this.result = result));
+    this.subscription = source.subscribe(() => this.hwMon.getHWStatus(this.host, this.port).subscribe((result) => this.result = result));
     this.connected = true;
   }
 
