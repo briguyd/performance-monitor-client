@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "performance-monitor-client"
+  },
+  "targets": {
+    "performance-monitor-client": {
+      "hosting": {
+        "performance-monitor-client": [
+          "performance-monitor-client"
+        ]
+      }
+    }
   }
 }

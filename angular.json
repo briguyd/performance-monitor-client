@@ -121,8 +121,13 @@
               "devServerTarget": "performance-monitor-client:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "performance-monitor-client"
 }
