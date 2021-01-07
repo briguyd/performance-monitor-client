@@ -10,7 +10,8 @@ import weatherRainy from '@iconify/icons-mdi/weather-rainy';
 import weatherLightning from '@iconify/icons-mdi/weather-lightning';
 import snowflake from '@iconify/icons-mdi/snowflake';
 import weatherFog from '@iconify/icons-mdi/weather-fog';
-const config = require("../../../config.json");
+import { HttpClient } from '@angular/common/http';
+// const config = require("../../../config.json");
 
 
 @Component({
@@ -19,11 +20,12 @@ const config = require("../../../config.json");
   styleUrls: ['./local-weather.component.scss']
 })
 export class LocalWeatherComponent implements OnInit {
-
+  private configUrl = "assets/config.json";
   private iconMap = new Map();
   public weather: any;
+  private config: any;
   private position: { latitude: number, longitude: number } | null = null;
-  constructor(private ws: LocalWeatherService, private cd: ChangeDetectorRef) { 
+  constructor(private ws: LocalWeatherService, private cd: ChangeDetectorRef, private http: HttpClient) { 
     this.iconMap.set('clear sky', [weatherSunny, weatherNight]);
     this.iconMap.set('few clouds', [weatherPartlyCloudy, weatherNightPartlyCloudy]);
     this.iconMap.set('scattered clouds', [weatherCloudy, weatherCloudy]);
@@ -36,9 +38,11 @@ export class LocalWeatherComponent implements OnInit {
   }
   // http://api.openweathermap.org/data/2.5/weather?lat=39.6363&lon=-106.5242&appid=5a1f40482eda54720087aef159adb8fe&units=imperial
   ngOnInit(): void {
-    this.getLocation();
-    setInterval(this.getLocation.bind(this), 1000 * 60 * 60); // update every hour
-    this.getLocation();
+    this.http.get(this.configUrl).subscribe(config => {
+      this.config = config;
+      this.getLocation();
+      setInterval(this.getLocation.bind(this), 1000 * 60 * 60); // update every hour
+    })
   }
 
   private getLocation() {
@@ -60,7 +64,7 @@ export class LocalWeatherComponent implements OnInit {
 
   private setPosition(position) {
     this.position = position.coords;
-    this.ws.getWeather(this.position, config.weatherApiKey).subscribe(res => this.setWeather(res));
+    this.ws.getWeather(this.position, this.config.weatherApiKey).subscribe(res => this.setWeather(res));
   }
 
   private setWeather(result: any) {
