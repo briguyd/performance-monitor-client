@@ -25,9 +25,11 @@
       <div>
         <app-temperature-monitor [cpuData]="getComponentByIcon('images_icon/cpu.png')"
           [gpuData]="getComponentByIcon('images_icon/nvidia.png')"></app-temperature-monitor>
+        <app-local-time></app-local-time>
       </div>
       <div>
         <app-network-monitor [hwData]="getComponentByName('Ethernet')"></app-network-monitor>
+        <app-local-weather></app-local-weather>
       </div>
     </div>
 

@@ -13,6 +13,9 @@ import { CpuTimelineComponent } from './cpu-timeline/cpu-timeline.component';
 import { FormsModule } from '@angular/forms';
 import { TemperatureMonitorComponent } from './temperature-monitor/temperature-monitor.component';
 import { NetworkMonitorComponent } from './network-monitor/network-monitor.component';
+import { LocalTimeComponent } from './local-time/local-time.component';
+import { LocalWeatherComponent } from './local-weather/local-weather.component';
+import { IconModule } from '@visurel/iconify-angular';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { NetworkMonitorComponent } from './network-monitor/network-monitor.compo
     BackgroundPicturesComponent,
     CpuTimelineComponent,
     TemperatureMonitorComponent,
-    NetworkMonitorComponent
+    NetworkMonitorComponent,
+    LocalTimeComponent,
+    LocalWeatherComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgxChartsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    IconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
