@@ -31,7 +31,6 @@ export class AppComponent {
       this.host = storedSettings.host;
       this.connected = true;
       this.connectToStatus();
-      console.log(this.port, this.host);
     }
   }
 

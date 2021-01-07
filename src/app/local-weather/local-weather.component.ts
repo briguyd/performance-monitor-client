@@ -23,6 +23,7 @@ export class LocalWeatherComponent implements OnInit {
   private configUrl = "assets/config.json";
   private iconMap = new Map();
   public weather: any;
+  public weatherIcon: any;
   private config: any;
   private position: { latitude: number, longitude: number } | null = null;
   constructor(private ws: LocalWeatherService, private cd: ChangeDetectorRef, private http: HttpClient) { 
@@ -70,6 +71,7 @@ export class LocalWeatherComponent implements OnInit {
   private setWeather(result: any) {
     this.weather = result;
     this.cd.markForCheck();
+    this.weatherIcon = this.getWeatherIcon();
   }
 
   public getTemp() {
