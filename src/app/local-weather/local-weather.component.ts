@@ -36,6 +36,7 @@ export class LocalWeatherComponent implements OnInit {
     this.iconMap.set('thunderstorm', [weatherLightning, weatherLightning]);
     this.iconMap.set('snow', [snowflake, snowflake]);
     this.iconMap.set('mist', [weatherFog, weatherFog]);
+    this.iconMap.set('haze', [weatherFog, weatherFog]);
   }
   
   ngOnInit(): void {
