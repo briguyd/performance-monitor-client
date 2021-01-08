@@ -37,7 +37,7 @@ export class LocalWeatherComponent implements OnInit {
     this.iconMap.set('snow', [snowflake, snowflake]);
     this.iconMap.set('mist', [weatherFog, weatherFog]);
   }
-  // http://api.openweathermap.org/data/2.5/weather?lat=39.6363&lon=-106.5242&appid=5a1f40482eda54720087aef159adb8fe&units=imperial
+  
   ngOnInit(): void {
     this.http.get(this.configUrl).subscribe(config => {
       this.config = config;
